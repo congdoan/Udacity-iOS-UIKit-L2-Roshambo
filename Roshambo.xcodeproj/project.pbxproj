@@ -13,6 +13,7 @@
 		F40CEDED1F9100BC00E987AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40CEDEC1F9100BC00E987AE /* Assets.xcassets */; };
 		F40CEDF01F9100BC00E987AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40CEDEE1F9100BC00E987AE /* LaunchScreen.storyboard */; };
 		F40CEDF81F910FA700E987AE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CEDF71F910FA700E987AE /* ResultViewController.swift */; };
+		F4D3DE291F91ADDC009B84E4 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3DE281F91ADDC009B84E4 /* HelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F40CEDEF1F9100BC00E987AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F40CEDF11F9100BC00E987AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F40CEDF71F910FA700E987AE /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		F4D3DE281F91ADDC009B84E4 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F40A16C01F91117700332E9B /* MainViewController.swift */,
 				F40CEDE91F9100BC00E987AE /* Main.storyboard */,
 				F40CEDF71F910FA700E987AE /* ResultViewController.swift */,
+				F4D3DE281F91ADDC009B84E4 /* HelperFunctions.swift */,
 				F40CEDEC1F9100BC00E987AE /* Assets.xcassets */,
 				F40CEDEE1F9100BC00E987AE /* LaunchScreen.storyboard */,
 				F40CEDF11F9100BC00E987AE /* Info.plist */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40A16C11F91117700332E9B /* MainViewController.swift in Sources */,
+				F4D3DE291F91ADDC009B84E4 /* HelperFunctions.swift in Sources */,
 				F40CEDE61F9100BC00E987AE /* AppDelegate.swift in Sources */,
 				F40CEDF81F910FA700E987AE /* ResultViewController.swift in Sources */,
 			);
