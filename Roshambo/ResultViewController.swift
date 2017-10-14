@@ -26,8 +26,6 @@ class ResultViewController: UIViewController {
         if let userChoice = userChoice {
             let result = comparePlayChoices(userChoice: userChoice, phoneChoice: RPS.randomChoice())
             resultImageView.image = UIImage(named: result.resultImageName)
-            print("resultImageName: \(result.resultImageName)")
-            print("resultImage: \(UIImage(named: result.resultImageName))")
             resultLabel.text = result.resultMassage
             userWin = result.userWin
         }
