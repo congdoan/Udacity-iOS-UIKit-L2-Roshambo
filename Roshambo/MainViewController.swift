@@ -65,8 +65,8 @@ class MainViewController: UIViewController, ResultViewControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResult" {
             let resultVC = segue.destination as! ResultViewController
-            let viewTag = (sender as! UIView).tag
-            let userChoice = Choice(rawValue: viewTag)!
+            let buttonTitle = (sender as! UIButton).currentTitle!
+            let userChoice = Choice(rawValue: buttonTitle)!
             resultVC.userChoice = userChoice
             resultVC.delegate = self
         }

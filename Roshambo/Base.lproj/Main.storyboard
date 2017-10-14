@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="width" constant="50" id="X9A-kB-lJ5"/>
                                     <constraint firstAttribute="height" constant="43.700000000000003" id="nN4-Ix-tj3"/>
                                 </constraints>
-                                <state key="normal" image="paper"/>
+                                <state key="normal" title="Paper" image="paper"/>
                                 <connections>
                                     <action selector="paperPicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WaW-SA-dAr"/>
                                 </connections>
@@ -34,18 +34,18 @@
                                     <constraint firstAttribute="width" constant="50" id="dqK-lr-XZP"/>
                                     <constraint firstAttribute="height" constant="43.700000000000003" id="m5T-w2-I5R"/>
                                 </constraints>
-                                <state key="normal" image="rock"/>
+                                <state key="normal" title="Rock" image="rock"/>
                                 <connections>
                                     <action selector="rockPicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XxN-l5-4Y2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H2-Lg-pWh" userLabel="Scissors">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H2-Lg-pWh" userLabel="Scissors">
                                 <rect key="frame" x="203" y="234" width="50" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="j5G-z0-YHQ"/>
                                     <constraint firstAttribute="height" constant="43.700000000000003" id="wDj-OO-SQU"/>
                                 </constraints>
-                                <state key="normal" image="scissors"/>
+                                <state key="normal" title="Scissors" image="scissors"/>
                                 <connections>
                                     <segue destination="Qrv-ia-nM4" kind="presentation" identifier="showResult" id="AkH-q5-sM7"/>
                                 </connections>

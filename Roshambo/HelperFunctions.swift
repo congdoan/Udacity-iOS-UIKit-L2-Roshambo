@@ -9,43 +9,33 @@
 import Foundation
 
 // MARK - Helper Types
-enum Choice: Int, CustomStringConvertible {
-    case paper, rock, scissors
+enum Choice: String {
+    case paper = "Paper", rock = "Rock", scissors = "Scissors"
     
-    var description: String {
-        switch self {
-        case .paper:
-            return "Paper"
-        case .rock:
-            return "Rock"
-        case .scissors:
-            return "Scissors"
-        }
+    static let allChoices = [paper, rock, scissors]
+    static func randomChoice() -> Choice {
+        let randomIndex = Int(arc4random_uniform(3))
+        return Choice.allChoices[randomIndex]
     }
 }
 
 // MARK: - Helper Functions
-func randomChoice() -> Choice {
-    let randomRawValue = Int(arc4random_uniform(3))
-    return Choice(rawValue: randomRawValue)!
-}
-
 func comparePlayChoices(userChoice: Choice, phoneChoice: Choice) -> (resultImageName: String, resultMassage: String, userWin: Bool?) {
     let resultImageName: String
     let resultMassage: String
     let userWin: Bool?
-    let matchup = "\(userChoice) vs. \(phoneChoice)"
+    let matchup = "\(userChoice.rawValue) vs. \(phoneChoice.rawValue)"
     switch (userChoice, phoneChoice) {
     case let (user, phone) where user == phone:
         resultImageName = "itsATie"
         resultMassage = "\(matchup): it's a tie!"
         userWin = nil
     case (.paper, .rock), (.rock, .scissors), (.scissors, .paper):
-        resultImageName = "\(userChoice)-\(phoneChoice)"
+        resultImageName = "\(userChoice.rawValue)-\(phoneChoice.rawValue)"
         resultMassage = "You Win with \(matchup) 😀!"
         userWin = true
     default:
-        resultImageName = "\(phoneChoice)-\(userChoice)"
+        resultImageName = "\(phoneChoice.rawValue)-\(userChoice.rawValue)"
         resultMassage = "You Lose with \(matchup) 😔!"
         userWin = false
     }
