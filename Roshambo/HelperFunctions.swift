@@ -30,13 +30,20 @@ func randomChoice() -> Choice {
     return Choice(rawValue: randomRawValue)!
 }
 
-func computeResult(userChoice: Choice, phoneChoice: Choice) -> (resultImageName: String, resultMassage: String, userWin: Bool?) {
+func comparePlayChoices(userChoice: Choice, phoneChoice: Choice) -> (resultImageName: String, resultMassage: String, userWin: Bool?) {
+    if arc4random() % 2 == 0 {
+        return compareWithIfElse(userChoice: userChoice, phoneChoice: phoneChoice)
+    }
+    return compareWithSwitch(userChoice: userChoice, phoneChoice: phoneChoice)
+}
+
+func compareWithIfElse(userChoice: Choice, phoneChoice: Choice) -> (resultImageName: String, resultMassage: String, userWin: Bool?) {
     let resultImageName: String
     let resultMassage: String
     let userWin: Bool?
     if userChoice == phoneChoice {
         resultImageName = "itsATie"
-        resultMassage = "\(userChoice) ties \(phoneChoice).You Tie!"
+        resultMassage = "\(userChoice) ties \(phoneChoice). You Tie!"
         userWin = nil
     } else {
         if userChoice == .paper && phoneChoice == .rock {
@@ -68,3 +75,58 @@ func computeResult(userChoice: Choice, phoneChoice: Choice) -> (resultImageName:
     }
     return (resultImageName, resultMassage, userWin)
 }
+
+func compareWithSwitch(userChoice: Choice, phoneChoice: Choice) -> (resultImageName: String, resultMassage: String, userWin: Bool?) {
+    let resultImageName: String
+    let resultMassage: String
+    let userWin: Bool?
+    switch userChoice {
+    case .paper:
+        switch phoneChoice {
+        case .paper:
+            resultImageName = "itsATie"
+            resultMassage = "Paper ties Paper. You Tie!"
+            userWin = nil
+        case .rock:
+            resultImageName = "PaperCoversRock"
+            resultMassage = "Paper covers Rock. You Win!"
+            userWin = true
+        case .scissors:
+            resultImageName = "ScissorsCutPaper"
+            resultMassage = "Scissors cut Paper. You Lose!"
+            userWin = false
+        }
+    case .rock:
+        switch phoneChoice {
+        case .paper:
+            resultImageName = "PaperCoversRock"
+            resultMassage = "Paper covers Rock. You Lose!"
+            userWin = false
+        case .rock:
+            resultImageName = "itsATie"
+            resultMassage = "Rock ties Rock. You Tie!"
+            userWin = nil
+        case .scissors:
+            resultImageName = "RockCrushesScissors"
+            resultMassage = "Rock crushes Scissors. You Win!"
+            userWin = true
+        }
+    case .scissors:
+        switch phoneChoice {
+        case .paper:
+            resultImageName = "ScissorsCutPaper"
+            resultMassage = "Scissors cut Paper. You Win!"
+            userWin = true
+        case .rock:
+            resultImageName = "RockCrushesScissors"
+            resultMassage = "Rock crushes Scissors. You Lose!"
+            userWin = false
+        case .scissors:
+            resultImageName = "itsATie"
+            resultMassage = "Scissors ties Scissors. You Tie!"
+            userWin = nil
+        }
+    }
+    return (resultImageName, resultMassage, userWin)
+}
+
