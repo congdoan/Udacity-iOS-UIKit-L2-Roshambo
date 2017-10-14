@@ -53,7 +53,7 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
     // MARK: - Actions
     @IBAction func rockPicked(_ sender: Any) {
         let resultVC = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
-        resultVC.userChoice = Choice.rock
+        resultVC.userChoice = RPS.rock
         resultVC.delegate = self
         present(resultVC, animated: true, completion: nil)
     }
@@ -66,7 +66,7 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
         if segue.identifier == "showResult" {
             let resultVC = segue.destination as! ResultViewController
             let buttonTitle = (sender as! UIButton).currentTitle!
-            let userChoice = Choice(rawValue: buttonTitle)!
+            let userChoice = RPS(rawValue: buttonTitle)!
             resultVC.userChoice = userChoice
             resultVC.delegate = self
         }

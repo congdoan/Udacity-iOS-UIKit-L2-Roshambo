@@ -15,6 +15,7 @@
 		F40CEDF81F910FA700E987AE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CEDF71F910FA700E987AE /* ResultViewController.swift */; };
 		F4A610631F91B3E1005B01DA /* ResultViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A610621F91B3E1005B01DA /* ResultViewController+Delegate.swift */; };
 		F4D3DE291F91ADDC009B84E4 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D3DE281F91ADDC009B84E4 /* HelperFunctions.swift */; };
+		F4E25FD81F92303B0039294E /* RPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E25FD71F92303B0039294E /* RPS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F40CEDF71F910FA700E987AE /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		F4A610621F91B3E1005B01DA /* ResultViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultViewController+Delegate.swift"; sourceTree = "<group>"; };
 		F4D3DE281F91ADDC009B84E4 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		F4E25FD71F92303B0039294E /* RPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				F40CEDF71F910FA700E987AE /* ResultViewController.swift */,
 				F4A610621F91B3E1005B01DA /* ResultViewController+Delegate.swift */,
 				F4D3DE281F91ADDC009B84E4 /* HelperFunctions.swift */,
+				F4E25FD71F92303B0039294E /* RPS.swift */,
 				F40CEDEC1F9100BC00E987AE /* Assets.xcassets */,
 				F40CEDEE1F9100BC00E987AE /* LaunchScreen.storyboard */,
 				F40CEDF11F9100BC00E987AE /* Info.plist */,
@@ -150,6 +153,7 @@
 				F40CEDE61F9100BC00E987AE /* AppDelegate.swift in Sources */,
 				F4A610631F91B3E1005B01DA /* ResultViewController+Delegate.swift in Sources */,
 				F40CEDF81F910FA700E987AE /* ResultViewController.swift in Sources */,
+				F4E25FD81F92303B0039294E /* RPS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

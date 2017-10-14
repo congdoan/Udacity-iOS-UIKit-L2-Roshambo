@@ -8,19 +8,8 @@
 
 import Foundation
 
-// MARK - Helper Types
-enum Choice: String {
-    case paper = "Paper", rock = "Rock", scissors = "Scissors"
-    
-    static let allChoices = [paper, rock, scissors]
-    static func randomChoice() -> Choice {
-        let randomIndex = Int(arc4random_uniform(3))
-        return Choice.allChoices[randomIndex]
-    }
-}
-
 // MARK: - Helper Functions
-func comparePlayChoices(userChoice: Choice, phoneChoice: Choice) -> (resultImageName: String, resultMassage: String, userWin: Bool?) {
+func comparePlayChoices(userChoice: RPS, phoneChoice: RPS) -> (resultImageName: String, resultMassage: String, userWin: Bool?) {
     let resultImageName: String
     let resultMassage: String
     let userWin: Bool?

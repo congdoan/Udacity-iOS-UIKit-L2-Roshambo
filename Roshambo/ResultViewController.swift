@@ -11,7 +11,7 @@ import UIKit
 class ResultViewController: UIViewController {
     
     // Variables
-    var userChoice: Choice?
+    var userChoice: RPS?
     var userWin: Bool?
     var delegate: ResultViewControllerDelegate?
     
@@ -24,7 +24,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         
         if let userChoice = userChoice {
-            let result = comparePlayChoices(userChoice: userChoice, phoneChoice: Choice.randomChoice())
+            let result = comparePlayChoices(userChoice: userChoice, phoneChoice: RPS.randomChoice())
             resultImageView.image = UIImage(named: result.resultImageName)
             print("resultImageName: \(result.resultImageName)")
             print("resultImage: \(UIImage(named: result.resultImageName))")
