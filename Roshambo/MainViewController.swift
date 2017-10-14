@@ -8,7 +8,41 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, ResultViewControllerDelegate {
+    
+    // MARK: - Variables
+    var wins = 0
+    var ties = 0
+    var loses = 0
+    
+    // MARK: - Outlets
+    @IBOutlet weak var totalTimesLabel: UILabel!
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var tiesLabel: UILabel!
+    @IBOutlet weak var losesLabel: UILabel!
+
+    // MARK: - Delegate functions
+    func gotResult(userWin: Bool?) {
+        print("gotResult: \(userWin)")
+        if let userWin = userWin {
+            if userWin {
+                wins += 1
+            } else {
+                loses += 1
+            }
+        } else {
+            ties += 1
+        }
+        updateResultUI()
+    }
+    
+    // MARK: - UI related functions
+    func updateResultUI() {
+        totalTimesLabel.text = "# of plays: \(wins + ties + loses)"
+        winsLabel.text = "You won: \(wins)"
+        tiesLabel.text = "You tied: \(ties)"
+        losesLabel.text = "You lost: \(loses)"
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -20,9 +54,8 @@ class MainViewController: UIViewController {
     // MARK: - Actions
     @IBAction func rockPicked(_ sender: Any) {
         let resultVC = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
-        let result = computeResult(userChoice: Choice.rock, phoneChoice: randomChoice())
-        resultVC.resultImageName = result.resultImageName
-        resultVC.resultMassage = result.resultMassage
+        resultVC.userChoice = Choice.rock
+        resultVC.delegate = self
         present(resultVC, animated: true, completion: nil)
     }
     
@@ -35,9 +68,8 @@ class MainViewController: UIViewController {
             let resultVC = segue.destination as! ResultViewController
             let viewTag = (sender as! UIView).tag
             let userChoice = Choice(rawValue: viewTag)!
-            let result = computeResult(userChoice: userChoice, phoneChoice: randomChoice())
-            resultVC.resultImageName = result.resultImageName
-            resultVC.resultMassage = result.resultMassage
+            resultVC.userChoice = userChoice
+            resultVC.delegate = self
         }
     }
 

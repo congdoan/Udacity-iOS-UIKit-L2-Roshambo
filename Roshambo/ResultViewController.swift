@@ -11,8 +11,9 @@ import UIKit
 class ResultViewController: UIViewController {
     
     // Variables
-    var resultImageName: String?
-    var resultMassage: String?
+    var userChoice: Choice?
+    var userWin: Bool?
+    var delegate: ResultViewControllerDelegate?
     
     // MARK: - Outlets
     @IBOutlet weak var resultImageView: UIImageView!
@@ -22,11 +23,11 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let resultImageName = resultImageName {
-            resultImageView.image = UIImage(named: resultImageName)
-        }
-        if let resultMassage = resultMassage {
-            resultLabel.text = resultMassage
+        if let userChoice = userChoice {
+            let result = computeResult(userChoice: userChoice, phoneChoice: randomChoice())
+            resultImageView.image = UIImage(named: result.resultImageName)
+            resultLabel.text = result.resultMassage
+            userWin = result.userWin
         }
     }
     
@@ -39,6 +40,9 @@ class ResultViewController: UIViewController {
     // MARK: - Actions
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        if let delegate = delegate {
+            delegate.gotResult(userWin: userWin)
+        }
     }
     
 }
