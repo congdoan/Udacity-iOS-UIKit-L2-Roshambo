@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, ResultViewControllerDelegate {
+class PlayViewController: UIViewController, ResultViewControllerDelegate {
     
     // MARK: - Variables
     var wins = 0

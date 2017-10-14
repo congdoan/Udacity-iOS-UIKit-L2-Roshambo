@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F40A16C11F91117700332E9B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A16C01F91117700332E9B /* MainViewController.swift */; };
+		F40A16C11F91117700332E9B /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A16C01F91117700332E9B /* PlayViewController.swift */; };
 		F40CEDE61F9100BC00E987AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CEDE51F9100BC00E987AE /* AppDelegate.swift */; };
 		F40CEDEB1F9100BC00E987AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40CEDE91F9100BC00E987AE /* Main.storyboard */; };
 		F40CEDED1F9100BC00E987AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40CEDEC1F9100BC00E987AE /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F40A16C01F91117700332E9B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F40A16C01F91117700332E9B /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		F40CEDE21F9100BC00E987AE /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40CEDE51F9100BC00E987AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F40CEDEA1F9100BC00E987AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				F40CEDE51F9100BC00E987AE /* AppDelegate.swift */,
-				F40A16C01F91117700332E9B /* MainViewController.swift */,
+				F40A16C01F91117700332E9B /* PlayViewController.swift */,
 				F40CEDE91F9100BC00E987AE /* Main.storyboard */,
 				F40CEDF71F910FA700E987AE /* ResultViewController.swift */,
 				F4A610621F91B3E1005B01DA /* ResultViewController+Delegate.swift */,
@@ -145,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F40A16C11F91117700332E9B /* MainViewController.swift in Sources */,
+				F40A16C11F91117700332E9B /* PlayViewController.swift in Sources */,
 				F4D3DE291F91ADDC009B84E4 /* HelperFunctions.swift in Sources */,
 				F40CEDE61F9100BC00E987AE /* AppDelegate.swift in Sources */,
 				F4A610631F91B3E1005B01DA /* ResultViewController+Delegate.swift in Sources */,
