@@ -23,7 +23,6 @@ class MainViewController: UIViewController, ResultViewControllerDelegate {
 
     // MARK: - Delegate functions
     func gotResult(userWin: Bool?) {
-        print("gotResult: \(userWin)")
         if let userWin = userWin {
             if userWin {
                 wins += 1
