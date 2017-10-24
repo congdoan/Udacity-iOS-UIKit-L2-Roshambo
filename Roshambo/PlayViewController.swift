@@ -14,16 +14,29 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
     var wins = 0
     var ties = 0
     var loses = 0
+    var history = [RPSMatch]()
+
     
     // MARK: - Outlets
     @IBOutlet weak var totalTimesLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var tiesLabel: UILabel!
     @IBOutlet weak var losesLabel: UILabel!
+    @IBOutlet weak var historyButton: UIButton!
+
+
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        historyButton.isEnabled = false
+    }
+
 
     // MARK: - Delegate functions
-    func gotResult(userWin: Bool?) {
-        if let userWin = userWin {
+    func gotResult(matchResult: RPSMatch) {
+        history.append(matchResult)
+        historyButton.isEnabled = true
+        if let userWin = matchResult.userWin {
             if userWin {
                 wins += 1
             } else {
@@ -34,7 +47,8 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
         }
         updateResultUI()
     }
-    
+
+
     // MARK: - UI related functions
     func updateResultUI() {
         totalTimesLabel.text = "# of plays: \(wins + ties + loses)"
@@ -42,14 +56,8 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
         tiesLabel.text = "You tied: \(ties)"
         losesLabel.text = "You lost: \(loses)"
     }
-    
-    // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+
     // MARK: - Actions
     @IBAction func rockPicked(_ sender: Any) {
         let resultVC = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
@@ -69,6 +77,9 @@ class PlayViewController: UIViewController, ResultViewControllerDelegate {
             let userChoice = RPS(rawValue: buttonTitle)!
             resultVC.userChoice = userChoice
             resultVC.delegate = self
+        } else if segue.identifier == "showHistory" {
+            let historyVC = segue.destination as! HistoryViewController
+            historyVC.history = history
         }
     }
 

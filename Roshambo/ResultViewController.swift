@@ -12,7 +12,7 @@ class ResultViewController: UIViewController {
     
     // Variables
     var userChoice: RPS?
-    var userWin: Bool?
+    var matchResult: RPSMatch!
     var delegate: ResultViewControllerDelegate?
     
     // MARK: - Outlets
@@ -24,10 +24,11 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         
         if let userChoice = userChoice {
-            let result = comparePlayChoices(userChoice: userChoice, phoneChoice: RPS.randomChoice())
+            let phoneChoice = RPS.randomChoice()
+            let result = comparePlayChoices(userChoice: userChoice, phoneChoice: phoneChoice)
             resultImageView.image = UIImage(named: result.resultImageName)
             resultLabel.text = result.resultMassage
-            userWin = result.userWin
+            matchResult = RPSMatch(userChoice: userChoice, phoneChoice: phoneChoice, userWin: result.userWin)
         }
     }
     
@@ -41,7 +42,7 @@ class ResultViewController: UIViewController {
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         if let delegate = delegate {
-            delegate.gotResult(userWin: userWin)
+            delegate.gotResult(matchResult: matchResult)
         }
     }
     

@@ -9,6 +9,6 @@
 import Foundation
 
 protocol ResultViewControllerDelegate {
-    func gotResult(userWin: Bool?)
+    func gotResult(matchResult: RPSMatch)
 }
 
